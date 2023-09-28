@@ -1,7 +1,7 @@
 let addressbookarr = [
   { id: 1, name: "Roobinee", phonenumber: 6380749031 },
-  { id: 2, name: "Jayanthi", phonenumber: 12345678 },
-  { id: 3, name: "Rajesh", phonenumber: 6380676531 },
+  { id: 2, name: "Jayanthi", phonenumber: 9790805958 },
+  { id: 3, name: "Rajesh", phonenumber: 9380012420 },
 ];
 
 const nameRef = document.getElementById("name");
@@ -17,6 +17,8 @@ const deleteId = (delid) => {
   });
   render();
 };
+
+let editid=0;
 
 const editId = (id) => {
   editid = id;
@@ -46,16 +48,18 @@ const render = () => {
 };
 
 btnRef.addEventListener("click", () => {
-  if (nameRef.value !== "" && phonenumberRef.value != "") {
+  console.log("clicked");
+  if (nameRef.value !== "" && phonenumberRef.value !== "") {
     if (editid === 0) {
-        addressbookArray.push({
+      console.log(editid);
+        addressbookarr.push({
         id: getRandomNumber(),
         name: nameRef.value,
         phonenumber: phonenumberRef.value,
       });
     } else {
       addressbookarr = addressbookarr.map((element) => {
-        if (element.id == editid)
+        if (element.id === editid)
           return {
             ...element,
             name: nameRef.value,
@@ -63,17 +67,21 @@ btnRef.addEventListener("click", () => {
           };
         else return element;
       });
+      editid = 0;
+      
+      btnRef.innerText="Add";
+      
     }
-    editid = 0;
     nameRef.value = "";
-    phonenumberRef.value = "";
-    btnRef.innerText="Add";
+      phonenumberRef.value = "";
     render();
+
   } else {
     nameRef.classList.replace("border-primary", "is-invalid");
     phonenumberRef.classList.replace("border-primary", "is-invalid");
   }
 });
+
 
 nameRef.addEventListener("keyup", () => {
   if (nameRef.value !== "") {

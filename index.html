@@ -15,37 +15,49 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
   </head>
+  
   <body>
     <div class="container my-5 min-vh-100">
         <div class="row">
           <div class="col"></div>
           <div class="col-6">
-            <p class="fs-1 text-center">Address Book</p>
-            <div class="mb-3 d-flex">
-              <input
-                type="text"
-                class="form-control border-primary"
-                id="name"
-                placeholder="Name"
-              />
+            <p class="fs-1 text-center" style="color: aquamarine;">Address Book</p>
+
+            <div class="mb-3 input-group mb-3 d-flex flex-column">
+              <div class="d-flex">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+                <input
+                  type="text"
+                  class="form-control border-primary"
+                  id="name"
+                  placeholder="Name"
+                />
+              </div>
+              <br>
+
+
+            <div class="d-flex">
+                <span class="input-group-text" id="basic-addon1">+91</span>
               <input
               type="number"
               class="form-control border-primary"
               id="phonenumber"
               placeholder="Phone Number"
             />
+            </div>
+            <br>
               <button
                 type="button"
                 id="btn"
-                class="btn btn-primary ms-2"
+                class="btn btn-primary"
               >
                 Add
               </button>
             </div>
-            <div id="list" class="border border-primary rounded">
+            <div id="list" class="border rounded" style="background-color: aqua;">
             </div>
           </div>
           <div class="col"></div>
